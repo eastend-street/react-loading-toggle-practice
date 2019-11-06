@@ -2,14 +2,16 @@ import React from "react";
 
 class StudentList extends React.Component {
   render() {
-    const { isLoading } = this.props;
+    const { studentList, isLoading } = this.props;
     if (isLoading) {
       return <p>Loading...</p>;
     }
     return (
       <>
         <ul>
-          <li>aaaaaaaaa</li>
+          {studentList.map(student => {
+            return <li>{student}</li>;
+          })}
         </ul>
       </>
     );
